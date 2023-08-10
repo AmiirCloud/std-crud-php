@@ -10,6 +10,16 @@
 
 </head>
 <body>
+    <?php
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $name = $_GET['name'];
+        $class = $_GET['class'];
+        $phone = $_GET['phone'];
+        $adress= $_GET['address'];
+        // alert("hllow");
+    }
+    ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-8">
@@ -26,7 +36,14 @@
                              type="text"
                              class='form-control col-8'
                              placeholder='Enter Student Id'
-                             name="id">
+                             name="id"
+                             value="<?php
+                               if(isset($id)){
+                                echo $id;
+                               }
+                             
+                              ?>"
+>
                         </div>
                         <div class="col-2">
                             <label for="">Name</label>
@@ -36,7 +53,11 @@
                              type="text"
                              class='form-control col-8'
                              placeholder='Enter Student Name'
-                             name="name">
+                             name="name"
+                            value="<?php    if(isset($name)){
+                                echo $name;
+                               }?>">
+                             
 
                         </div>      <div class="col-2">
                             <label for="">Class</label>
@@ -46,7 +67,12 @@
                              type="text"
                              class='form-control col-8'
                              placeholder='Enter Student Class'
-                             name="class">
+                             name="class"
+                            value="<?php    if(isset($class)){
+                                echo $class;
+                               }?>">
+                             
+                             
 
                         </div>      <div class="col-2">
                             <label for="">Phone</label>
@@ -56,7 +82,10 @@
                             type="text"
                             class='form-control col-8'
                             placeholder='Enter Student Phone'
-                            name="phone">
+                            name="phone"
+                            value="<?php     if(isset($phone)){
+                                echo $phone;
+                               }?>">
 
                         </div>      <div class="col-2">
                             <label for="">Address</label>
@@ -67,11 +96,22 @@
                             class='form-control col-8'
                             placeholder='Enter Student Address'
                             name='adress'
-                            >
+                            value="<?php    if(isset($adress)){
+                                echo $adress;
+                               }?>">
+
+                            
 
                         </div>
-                        <div class="col-12">
-                            <button type="submit" name="insert" class="btn btn-info text-white w-100">Regiser</button>
+                        <div class="row">
+                            <div class="col-6">
+
+                                <button type="submit" name="insert" class="btn btn-success text-white w-100 col-6">Regiser</button>
+                            </div>
+                            <div class="col-6">
+
+                                <button type="submit" name="update" class="btn btn-info text-white w-100 col-6">Update</button>
+                            </div>
                         </div>
                         </form>
                     </div>

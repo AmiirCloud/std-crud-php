@@ -45,8 +45,10 @@ include './conn.php'
                                 "&class=".$row['std_class'].
                                 "&phone=". $row["std_phone"].
                                 "&address=".$row['std_address'] ;
+                                $backend  = " backend.php?" ."id=".$row["std_id"];
+                               
                                $table .= "<td><a href = '$formDate' class='btn btn-info text-white'>Update</a></td>";
-                               $table .= "<td><a href = '$formDate' class='btn btn-danger text-white'>Delete</a></td>";
+                               $table .= "<td><a href = '$backend' class='btn btn-danger text-white' value='delete'name='delete'>Delete</a></td>";
                                 // <td><button class="btn btn-danger text-white">Delete</button></td>
                                 $table .= '</tr>';
                                
