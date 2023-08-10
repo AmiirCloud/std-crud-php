@@ -1,5 +1,6 @@
 <?php
 include './conn.php'
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@ include './conn.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -48,7 +49,7 @@ include './conn.php'
                                 $backend  = " backend.php?" ."id=".$row["std_id"];
                                
                                $table .= "<td><a href = '$formDate' class='btn btn-info text-white'>Update</a></td>";
-                               $table .= "<td><a href = '$backend' class='btn btn-danger text-white' value='delete'name='delete'>Delete</a></td>";
+                               $table .= "<td><a href = '$backend' type='submit' class='btn btn-danger text-white' value='delete'name='delete'>Delete</a></td>";
                                 // <td><button class="btn btn-danger text-white">Delete</button></td>
                                 $table .= '</tr>';
                                
