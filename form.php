@@ -17,41 +17,61 @@
                 <div class="card p-4">
                     <h3 class="fw-normal p-2 mb-2 ">Fill This From CareFully !!</h3>
                     <div class="form-group ">
-                        <form action="" class="row">
+                        <form action="backend.php"method="post" class="row">
                           <div class="col-2">
                             <label for="">ID</label>
                         </div>
                         <div class="col-10 mb-2">
-                            <input type="text"class='form-control col-8'placeholder='Enter Student Id'>
-
+                            <input
+                             type="text"
+                             class='form-control col-8'
+                             placeholder='Enter Student Id'
+                             name="id">
                         </div>
                         <div class="col-2">
                             <label for="">Name</label>
                         </div>
                         <div class="col-10 mb-2">
-                            <input type="text"class='form-control col-8'placeholder='Enter Student Name'>
+                            <input
+                             type="text"
+                             class='form-control col-8'
+                             placeholder='Enter Student Name'
+                             name="name">
 
                         </div>      <div class="col-2">
                             <label for="">Class</label>
                         </div>
                         <div class="col-10 mb-2">
-                            <input type="text"class='form-control col-8'placeholder='Enter Student Class'>
+                            <input
+                             type="text"
+                             class='form-control col-8'
+                             placeholder='Enter Student Class'
+                             name="class">
 
                         </div>      <div class="col-2">
                             <label for="">Phone</label>
                         </div>
                         <div class="col-10 mb-2">
-                            <input type="text"class='form-control col-8'placeholder='Enter Student Phone'>
+                            <input 
+                            type="text"
+                            class='form-control col-8'
+                            placeholder='Enter Student Phone'
+                            name="phone">
 
                         </div>      <div class="col-2">
                             <label for="">Address</label>
                         </div>
                         <div class="col-10 mb-3">
-                            <input type="text"class='form-control col-8'placeholder='Enter Student Address'>
+                            <input 
+                            type="text"
+                            class='form-control col-8'
+                            placeholder='Enter Student Address'
+                            name='adress'
+                            >
 
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-info text-white w-100">Regiser</button>
+                            <button type="submit" name="insert" class="btn btn-info text-white w-100">Regiser</button>
                         </div>
                         </form>
                     </div>
