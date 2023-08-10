@@ -13,33 +13,46 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-8">
-                <h1 class="fw-light">Student Registration</h1>
+                <h1 class="fw-light ">Student Registration</h1>
                 <div class="card p-4">
-                    <h3 class="fw-normal">Fill This From CareFully !!</h3>
+                    <h3 class="fw-normal p-2 mb-2 ">Fill This From CareFully !!</h3>
                     <div class="form-group ">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="">ID</label>
-                                <input type="text" class="form-control" placeholder="Enter Student ID">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Student Name" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Phone</label>
-                                <input type="text" class="form-control" placeholder="Enter Student Name" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Address</label>
-                                <input type="text" class="form-control" placeholder="Enter Student Name" id="name">
-                            </div>
-                            <div class="form-group row  mt-3">
-                                <div class="col-12  ">
+                        <form action="" class="row">
+                          <div class="col-2">
+                            <label for="">ID</label>
+                        </div>
+                        <div class="col-10 mb-2">
+                            <input type="text"class='form-control col-8'placeholder='Enter Student Id'>
 
-                                    <button class="btn btn-info text-white w-100 block">Register</button>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Name</label>
+                        </div>
+                        <div class="col-10 mb-2">
+                            <input type="text"class='form-control col-8'placeholder='Enter Student Name'>
+
+                        </div>      <div class="col-2">
+                            <label for="">Class</label>
+                        </div>
+                        <div class="col-10 mb-2">
+                            <input type="text"class='form-control col-8'placeholder='Enter Student Class'>
+
+                        </div>      <div class="col-2">
+                            <label for="">Phone</label>
+                        </div>
+                        <div class="col-10 mb-2">
+                            <input type="text"class='form-control col-8'placeholder='Enter Student Phone'>
+
+                        </div>      <div class="col-2">
+                            <label for="">Address</label>
+                        </div>
+                        <div class="col-10 mb-3">
+                            <input type="text"class='form-control col-8'placeholder='Enter Student Address'>
+
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-info text-white w-100">Regiser</button>
+                        </div>
                         </form>
                     </div>
                 </div>
