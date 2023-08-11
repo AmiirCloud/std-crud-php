@@ -32,7 +32,7 @@ function readAllStd($conn){
 }
 
 function register($con){
-    $data  = array();
+   
     $message = array();
     if(isset($_POST['action'])){
         $name = $_POST['name'];
@@ -49,7 +49,7 @@ function register($con){
             $message =  array('status'=>false,'data'=>$con->error);
         }
     }
-    echo json_encode($message);
+    echo  json_encode($message);
 }
 
 function update($con){
@@ -82,10 +82,6 @@ if(isset($_POST['action'])){
 }else{
     echo 'there is no action';
 }
-if(isset($_GET['id'])){
-    // echo ('we dont have any get');
-}else{
-    echo 'we dont have any get is required';
-}
+
 
 ?>

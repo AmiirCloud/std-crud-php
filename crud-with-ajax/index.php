@@ -40,41 +40,40 @@
            <div class="col-12">
        
             <div class="form-group">
-                <form action="" class="row">
+                <form  class="row" id="registerForm">
                     <div class="col-2 ">
                         <label for="">Name</label>
                     </div>
                     <div class="col-10  mb-2">
-                        <input type="text" class="form-control">
+                        <input type="text"name  = 'name' class="form-control">
                     </div>
                     
                     <div class="col-2">
                         <label for="">Class</label>
                     </div>
                     <div class="col-10  mb-2">
-                        <input type="text" class="form-control" placeholder="Class">
+                        <input type="text" name = 'class'class="form-control" placeholder="Class">
                     </div>
                     <div class="col-2 mb-2">
                         <label for="">Phone</label>
                     </div>
                     <div class="col-10 mb-2">
-                        <input type="text" class="form-control">
+                        <input type="text" name="phone" class="form-control">
                     </div>
                     <div class="col-2 ">
                         <label for="">Address</label>
                     </div>
                     <div class="col-10 mb-2">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="address">
                     </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+
                 </form>
             </div>
            </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Register</button>
-        <button type="button" class="btn btn-secondary close" id='close' data-dismiss="modal">Close</button>
-      </div>
+  
     </div>
   </div>
 </div>
