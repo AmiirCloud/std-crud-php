@@ -26,7 +26,26 @@ function readAllStd($conn){
     echo json_encode($message);
 }
 
+function register($con){
+    $data  = array();
+    $message = array();
+    if(isset($_POST['action'])){
+        $name = $_POST['name'];
+        $class = $_POST['class'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+        // $name = $_POST['name'];
+        $query = "INSERT INTO sudents values (null,'$name','$class','$phone','$address')";
+        $res = $con->query($query);
+        if($res){
+          $message =  array('status'=>true,'data'=>'Student Registered Success');
 
+        }else{
+            $message =  array('status'=>false,'data'=>$con->error);
+        }
+    }
+    echo json_encode($message);
+}
 
 if(isset($action)){
     $action($con);
