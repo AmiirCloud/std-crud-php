@@ -9,10 +9,8 @@ if(isset($_POST['action'])){
 
     $action = $_POST['action'];
 }
-if(isset($GET['id'])){
-    $action =  'update';
-    // $action = $;_POST['action'];
-}
+
+
 
 // write readAll Student api 
 function readAllStd($conn){
@@ -51,19 +49,39 @@ function register($con){
     }
     echo  json_encode($message);
 }
+// update 
+
+function fetchOneStudentInfo($con){
+    $data  = array();
+    $message = array();
+    $id  = $_POST['id'];
+
+    $query = "SELECT * FROM sudents where sudents.std_id  = '$id'";
+    $res  = $con->query($query);
+    if($res){
+        while($row  = $res->fetch_assoc()){
+            $data[]= $row;
+        }
+        $message =  array('status'=>true,'data'=>$data);
+    }else{
+        $message = array('status'=>false, 'data'=>$con->error);
+    }
+    echo json_encode($message);
+
+}
 
 function update($con){
 
     $message  = array();
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $name = $_GET['name'];
-        $class = $_GET['class'];
-        $phone = $_GET['phone'];
-        $address = $_GET['address'];
+    if(isset($_POST['action'])){
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $class = $_POST['class'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
 
-        $query = "UPDATE sudents set name = '$name',class = '$class' , phone = '$phone' , address = '$address' where id   = '$id'";
-        $res = $con->quer($query);
+        $query = "UPDATE sudents set std_name = '$name',std_class = '$class' , std_phone  = '$phone' , std_address = '$address' where std_id  = '$id'";
+        $res = $con->query($query);
         if($res){
             $message =  array('status',true,'data'=>"Updated Success");
 
@@ -76,8 +94,29 @@ function update($con){
     }
     echo json_encode($message);
 }
+function delete($con){
 
-if(isset($_POST['action'])){
+    $message  = array();
+    if(isset($_POST['action'])){
+        $id = $_POST['id'];
+
+
+        $query = "DELETE  FROM sudents  where std_id  = '$id'";
+        $res = $con->query($query);
+        if($res){
+            $message =  array('status',true,'data'=>"deleted Success");
+
+        }else{
+            $message  =  array('status',false,'data'=>$con->error);
+        }
+    }else{
+        $message = array('status'=>false,'data'=>'GEt Reuired');
+        // echo json_encode($message)
+    }
+    echo json_encode($message);
+}
+
+if($action){
     $action($con);
 }else{
     echo 'there is no action';
