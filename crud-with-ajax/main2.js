@@ -6,17 +6,18 @@ $(".close").on('click',()=>{
     $('#addNew').hide()
 })
 
-let btnAction = 'insert'
-$('#registerForm').submit(function(event){
-    event.preventDefault()
-    let formData  = new FormData($('#registerForm')[0]);
-    if(btnAction == 'insert'){
+let btnAction = 'insert' // btn to check wwather you wanna  update or insert  by default is insert
 
+$('#registerForm').submit(function(event){// when  regsiterForm is submitted  do the following things 
+    event.preventDefault()
+    let formData  = new FormData($('#registerForm')[0]);// take the form values
+    if(btnAction == 'insert'){
+        // if the action is insert then do the following 
         formData.append('action','register');
     }else{
+        // else do the update 
         formData.append('action','update')
     }
-    
    $.ajax({
     method:'POST',
     dataType:'JSON',
@@ -35,11 +36,12 @@ $('#registerForm').submit(function(event){
 
     }
    })
-  $('#registerForm')[0].reset()
+  $('#registerForm')[0].reset()// reset the form 
 })
 
 
 function loadData(){
+    // before you load reset the the table 
     $('#myTable tbody').html('')
     // $('#addNew').hide()
 
@@ -56,21 +58,20 @@ function loadData(){
          allData.forEach((item)=>{
              tr = "<tr>"
             for(i in item){
-                tr += `<td>${item[i]} </td>`
+                tr += `<td class ='p-2 m-1 small'>${item[i]} </td>`
             }
             link  =  `index.php?id=${item.std_id}`
        
             tr+=
              ` <td>
-            <a class = "btn btn-primary update" update_info=${item['std_id']}>Update</a>
+            <a class = "btn btn-primary p-1 m-1 small  update" update_info=${item['std_id']}>Update</a>
             </td> `
             tr+=
              ` <td>
-            <a class = "btn btn-danger delete" delete_info=${item['std_id']}>Delete</a>
+            <a class = "btn btn-danger p-1 m-1 small  delete" delete_info=${item['std_id']}>Delete</a>
             </td> `
             $("#myTable").append(tr)
-            // loadData()
-            // console.log("row ",tr)
+         
          })
       
         },
@@ -79,8 +80,7 @@ function loadData(){
         }
     })
 }
-
-
+// load one student funcion 
 function loadOne(id){
     let sendingData  = {
         action:'fetchOneStudentInfo',
@@ -103,20 +103,14 @@ function loadOne(id){
                 let  ui  = `   <input type='hidden'id = 'id' name  = 'id' class='form-control hidden'  value=${data.data[0].std_id}> ` 
                 $('#registerForm').append(ui)
                 btnAction = 'update'
-             
-
                 loadData()
-                
-
-                
-      
         },
         error:(error)=>{
             console.log(error)
         }
     })
 }
-
+// delete funcion 
 function deleteStd(id){
     let sendingData  = {
         action:'delete',
@@ -130,10 +124,6 @@ function deleteStd(id){
         success:(data)=>{
                loadData()
                alert(data.data)
-                
-
-                
-      
         },
         error:(error)=>{
             console.log(error)
@@ -141,6 +131,7 @@ function deleteStd(id){
     })
 }
 $('#myTable').on('click','a.update',function(){
+    // tabel on  click  a.update  on click an anchor tag which has that class 
     let id  = $(this).attr('update_info');
    loadOne(id)
 })

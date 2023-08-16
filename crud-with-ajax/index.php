@@ -12,15 +12,18 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container ">
 
-        <div class="row justify-content-center p-5 m-2 m-auto">
-            <div class="col-10 col-sm-8 col-md-10 m-auto">
-                <h2 class="leading fw-normal  text-center  ">User Infromation</h2>
+        <div class="row justify-content-center ">
+            <div class="col-12 m-5 ">
+            <h2 class="  ">User Infromation</h2>
                 <button class="btn btn-success m-1 add">Add Student</button>
+            </div>
+            <div class="col-12">
+         
                 <table class="table " id="myTable">
                     <tr class="bg-black text-white">
-                        <th>ID</th>
+                        <th >ID</th>
                         <th>Name</th>
                         <th>Class</th>
                         <th>Phone</th>
@@ -31,6 +34,7 @@
                     </tr>
                 </table>
             </div>
+    
         </div>
         <div class="modal " tabindex="-1" role="dialog" id="addNew">
   <div class="modal-dialog" role="document">
